@@ -131,7 +131,7 @@
                                      label="头像">
                         <template slot-scope="scope">
                             <div v-if="scope.row.yonghuPhoto">
-                                <img :src="'http://localhost:8081/shipinkucunguanli/file/download?fileName=' + (scope.row.yonghuPhoto.split(',')[0]).split('/')[5]" width="100" height="100">
+                                <img :src="scope.row.yonghuPhoto" width="100" height="100">
                             </div>
                             <div v-else>无图片</div>
                         </template>

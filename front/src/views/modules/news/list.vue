@@ -67,7 +67,7 @@
                                 :action="getActionUrl"
                                 :on-success="newsUploadSuccess"
                                 :on-error="newsUploadError"
-                                :show-file-list = false>
+                                :show-file-list = false>a
                             <el-button
                                     v-if="isAuth('news','导入导出')"
                                     type="success"
@@ -130,7 +130,7 @@
                                      label="公告图片">
                         <template slot-scope="scope">
                             <div v-if="scope.row.newsPhoto">
-                                <img :src="'http://localhost:8081/shipinkucunguanli/file/download?fileName=' + (scope.row.newsPhoto.split(',')[0]).split('/')[5]" width="100" height="100">
+                                <img :src="scope.row.newsPhoto" width="100" height="100">
                             </div>
                             <div v-else>无图片</div>
                         </template>

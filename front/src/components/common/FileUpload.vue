@@ -118,14 +118,11 @@ export default {
       // 有些图片不是公开的，所以需要携带token信息做权限校验
       var token = storage.get("token");
       fileList.forEach(function(item, index) {
-        //http://localhost:8081/shipinkucunguanli/file/download?fileName=1741108554345.jpg
         var url = item.url.split("?")[0];
-        var a =url.split("/");
-        console.log(a[a.length - 1]);
         var name = item.name;
         var file = {
           name: name,
-          url: "http://localhost:8081/shipinkucunguanli/file/download?fileName="+ a[a.length - 1] + "&token=" + token
+          url: url + "?token=" + token
         };
         fileArray.push(file);
         fileUrlArray.push(url);

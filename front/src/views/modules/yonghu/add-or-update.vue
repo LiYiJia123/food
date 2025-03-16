@@ -248,6 +248,7 @@
                     method: 'get'
                 }).then(({ data }) => {
                     if (data && data.code === 0) {
+                        console.log('后端返回的头像路径：', data.data.yonghuPhoto);
                         _this.ruleForm = data.data;
                     } else {
                         _this.$message.error(data.msg);
